@@ -11,8 +11,6 @@ jobs:
 
     steps:
     - name: Checkout repository
-      env:
-        GIT_EXEC_PATH: ""
       uses: actions/checkout@v2.3.3
       with:
         persist-credentials: false
