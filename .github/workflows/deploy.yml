@@ -13,17 +13,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        persist-credentials: false
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        token: ${{ secrets.PAT_WEBSITE }}
         fetch-depth: 0
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '20'
-
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
 
     - name: Install dependencies (if any)
       run: npm install || echo "No dependencies to install"
@@ -34,6 +30,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        github_token: ${{ secrets.PAT_WEBSITE }}
         publish_branch: gh-pages
         publish_dir: .
