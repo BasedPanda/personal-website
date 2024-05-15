@@ -11,9 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675
+      env:
+        GIT_EXEC_PATH: ""
+      uses: actions/checkout@v2.3.3
       with:
         persist-credentials: false
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         fetch-depth: 0
 
     - name: Set up Node.js
@@ -30,6 +33,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         publish_branch: gh-pages
         publish_dir: .
