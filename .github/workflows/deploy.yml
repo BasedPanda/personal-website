@@ -13,19 +13,22 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        persist-credentials: false # Let's make sure to disable default credentials to avoid conflicts
-        fetch-depth: 0 # Fetch all history for all branches and tags
+        persist-credentials: false
+        fetch-depth: 0
+
+    - name: Debug: Show current directory
+      run: pwd
+
+    - name: Debug: List files in current directory
+      run: ls -al
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '16'
 
-    - name: Install dependencies (if any)
-      run: npm install || echo "No dependencies to install"
-
-    - name: List directory contents
-      run: ls -al
+    - name: Debug: Show Node.js version
+      run: node --version
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -33,8 +36,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
         publish_dir: .
-
-    - name: Debug git status
-      run: |
-        git status
-        ls -al
