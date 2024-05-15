@@ -11,24 +11,21 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         persist-credentials: false
         fetch-depth: 0
 
-    - name: Debug: Show current directory
-      run: pwd
-
-    - name: Debug: List files in current directory
-      run: ls -al
-
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '20'
 
-    - name: Debug: Show Node.js version
-      run: node --version
+    - name: Install dependencies (if any)
+      run: npm install || echo "No dependencies to install"
+
+    - name: Build project (if necessary)
+      run: npm run build || echo "No build script"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -36,3 +33,9 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
         publish_dir: .
+
+    - name: Debug: Show current directory
+      run: pwd
+
+    - name: Debug: List files in current directory
+      run: ls -al
