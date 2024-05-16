@@ -3,27 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarav Singh - Home</title>
+    <title>Aarav Singh - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="work.html">Work Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">Aarav Singh</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#work">Work Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <section id="home">
-            <h1>Welcome to My Website!</h1>
-            <img src="path-to-your-photo.jpg" alt="Aarav Singh">
-            <p>Hello! I'm Aarav Singh, a junior in Computer Engineering with experience in product management and software development.</p>
-            <a href="path-to-your-resume.pdf" download="Aarav_Singh_Resume.pdf">Download Resume</a>
+        <section id="home" class="section">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>HEY! I'M AARAV.</h1>
+                    <p>Welcome to my personal website! I am a junior in Computer Engineering with experience in product management and software development.</p>
+                    <a href="Aarav_Singh_resume.pdf" download="Aarav_Singh_Resume.pdf" class="button">Download Resume</a>
+                </div>
+                <div class="hero-image">
+                    <img src="IMG_4174.JPG" alt="Aarav Singh">
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section">
+            <h2>Work Experience</h2>
+            <div class="experience">
+                <h3>Software Engineering and Product Management Intern at NCSA</h3>
+                <p>May 2023 - Aug 2023 | Urbana, IL</p>
+                <ul>
+                    <li>Developed and marketed the AVL website to catalog and display over 10,000 images and videos using Python, MySQL, HTML, and CSS as part of the Data Viz Hub project.</li>
+                    <li>Mapped stars in the observable universe within a certain brightness range using Python scripts, data from the Gaia star catalog, and graphs from FlatHUB.</li>
+                    <li>Collaborated on an admin project to generate and email a list of package updates in computing systems via a Python script managed as a Cron job.</li>
+                    <li>Applied Houdini software to create visuals for a project representing aging dams and their safety across the USA.</li>
+                </ul>
+
+                <h3>Development and Management Intern at NCSA</h3>
+                <p>Aug 2023 - May 2024 | Urbana, IL</p>
+                <ul>
+                    <li>Led the development of the Data Viz Hub product and managed other interns working on it.</li>
+                    <li>Improved the cataloguing website to help AVL gain future licensing deals.</li>
+                    <li>Assisted the NCSA storage team with hardware management of HPC system Delta and storage system Taiga.</li>
+                    <li>Developed a project to turn planetarium shows into an immersive VR experience for Apple and Meta devices.</li>
+                    <li>Launched a program to output real-time visuals based on audio inputs for the Modular Princess music performance at UIUC.</li>
+                    <li>Contributed to the publication of a paper on how informational labels impact 3-D visuals.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects and RSO Involvements</h2>
+            <div class="projects">
+                <h3>Social Media Insights Dashboard</h3>
+                <p>Developed a Django-powered dashboard for analyzing social media trends and metrics, using Python for data aggregation and insights into engagement and demographics.</p>
+
+                <h3>Banking and Loan System</h3>
+                <p>Built a Python-MySQL banking system enabling users to create savings/checking accounts, explore loans, and track investments with generated interest.</p>
+
+                <h3>Covid Vaccine Slot Finder</h3>
+                <p>Developed a vaccine slot finder notifying users of nearby available slots based on pin code and vaccine preference within a 10-mile radius, including center details.</p>
+
+                <h3>Chess Bot</h3>
+                <p>Built a C++ chess bot that interactively accepted user moves, providing real-time board updates. The bot incorporated alpha-beta pruning for optimal moves, while considering en-passant and promotion to new pieces.</p>
+
+                <h3>RSOs</h3>
+                <p>VexU Robotics (competition team head), Product Management at Illinois, Sports Business Council.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <ul>
+                    <li><strong>Programming Languages:</strong> Python, C++, C, MySQL, TensorFlow, PHP, HTML, CSS, Houdini, JavaScript, SystemVerilog.</li>
+                    <li><strong>Frameworks and Tools:</strong> VS Code, git, docker, vim/vi, Django, Unity, PowerShell, Max/MSP, Linux.</li>
+                    <li><strong>Soft Skills:</strong> Team player, problem solver, organized, great presenter, communicator, and analyst.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
         </section>
     </main>
     <script src="script.js"></script>
