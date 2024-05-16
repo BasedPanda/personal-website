@@ -1,84 +1,90 @@
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    color: #333;
+    background-color: #fff;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background: #000;
+    color: white;
+    padding: 1em 0;
     text-align: center;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
+    background: #333;
+    color: white;
+    list-style: none;
     padding: 0;
+    text-align: center;
+    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 1em;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
-section {
-    padding: 20px;
-    margin: 20px;
+main {
+    padding: 2em;
 }
 
-#home {
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#about, #skills, #projects, #contact {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+section h1 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5em;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background: #333;
+    color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 1em 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
 }
 
 form label {
-    margin: 5px 0;
+    display: block;
+    margin-top: 1em;
 }
 
 form input, form textarea {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
 }
 
 form button {
-    padding: 10px;
+    background: #000;
+    color: white;
+    padding: 0.5em 1em;
     border: none;
-    background-color: #333;
-    color: #fff;
-    border-radius: 4px;
     cursor: pointer;
+    margin-top: 1em;
 }
 
 form button:hover {
-    background-color: #555;
+    background: #444;
+}
+
+main {
+    transition: opacity 0.5s;
+}
+
+main.fade-out {
+    opacity: 0;
 }
